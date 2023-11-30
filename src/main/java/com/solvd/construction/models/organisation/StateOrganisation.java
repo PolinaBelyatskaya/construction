@@ -2,20 +2,18 @@ package com.solvd.construction.models.organisation;
 
 public class StateOrganisation extends Organisation {
 
-    private String propertyType;
+    private String propertyRight;
 
-    public StateOrganisation (){}
-
-    public StateOrganisation (String name, String budget, String propertyType){
-        super (name, budget);
-        this.propertyType = propertyType;
+    public StateOrganisation (String name, int budget, String type, String propertyRight){
+        super (name, budget, type);
+        this.propertyRight = propertyRight;
     }
 
-    public String getPropertyType() {
-        return propertyType;
+    public String getPropertyRight() {
+        return propertyRight;
     }
 
-    public void setPropertyType(String propertyType) {
-        this.propertyType = propertyType;
+    public void setPropertyRight(String propertyRight) {
+        this.propertyRight = propertyRight;
     }
 }

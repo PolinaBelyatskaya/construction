@@ -1,5 +1,7 @@
 package com.solvd.construction.models.building;
 
+import java.util.Objects;
+
 public abstract class Building {
 
     private String area;
@@ -15,6 +17,36 @@ public abstract class Building {
         this.floorsNumber = floorsNumber;
         this.floorsHeight = floorsHeight;
         this.type = type;
+    }
+
+    public Building (String area, int floorsNumber, String floorsHeight){
+        this.area = area;
+        this.floorsNumber = floorsNumber;
+        this.floorsHeight = floorsHeight;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Building building = (Building) o;
+        return constructionYear == building.constructionYear && floorsNumber == building.floorsNumber && Objects.equals(area, building.area) && Objects.equals(floorsHeight, building.floorsHeight) && Objects.equals(type, building.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(area, constructionYear, floorsNumber, floorsHeight, type);
+    }
+
+    @Override
+    public String toString() {
+        return "Building{" +
+                "area='" + area + '\'' +
+                ", constructionYear=" + constructionYear +
+                ", floorsNumber=" + floorsNumber +
+                ", floorsHeight='" + floorsHeight + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 
     public String getArea() {

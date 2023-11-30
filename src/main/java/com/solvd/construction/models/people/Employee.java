@@ -9,19 +9,21 @@ public abstract class Employee {
     private int userId;
     private float salaryPerHour;
 
-    public Employee (){}
 
     public Employee(String firstName, String lastName, Sex sex, int age, int userId, float salaryPerHour){
-        this(firstName, lastName, sex, age, userId);
-        this.salaryPerHour = salaryPerHour;
-    }
-
-    public Employee(String firstName, String lastName, Sex sex, int age, int userId){
         this.firstName = firstName;
         this.lastName = lastName;
         this.sex = sex;
         this.age = age;
         this.userId = userId;
+        this.salaryPerHour = salaryPerHour;
+    }
+
+    public Employee(String firstName, String lastName, Sex sex, int age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sex = sex;
+        this.age = age;
     }
 
     public String getFirstName() {
@@ -42,10 +44,6 @@ public abstract class Employee {
 
     public Sex getSex() {
         return sex;
-    }
-
-    public void setSex(Sex sex) {
-        this.sex = sex;
     }
 
     public int getAge() {

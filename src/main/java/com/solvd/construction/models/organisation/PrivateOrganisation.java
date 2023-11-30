@@ -2,18 +2,22 @@ package com.solvd.construction.models.organisation;
 
 public class PrivateOrganisation extends Organisation {
 
-    private String propertyType;
+    private String tax;
 
-    public PrivateOrganisation (String name, String budget, String propertyType){
-        super(name, budget);
-        this.propertyType = propertyType;
+    public PrivateOrganisation (String name, int budget, String type, String tax){
+        super(name, budget, type);
+        this.tax = tax;
     }
 
-    public String getPropertyType() {
-        return propertyType;
+    public PrivateOrganisation (String name){
+        super (name);
     }
 
-    public void setPropertyType(String propertyType) {
-        this.propertyType = propertyType;
+    public String getTax() {
+        return tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
     }
 }

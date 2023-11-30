@@ -4,11 +4,8 @@ public class ShoppingCenter extends Building {
 
     private int shopsNumber;
 
-    public ShoppingCenter() {
-    }
-
-    public ShoppingCenter(String area, int constructionYear, int floorsNumber, String floorsHeight, String type, int shopsNumber) {
-        super(area, constructionYear, floorsNumber, floorsHeight, type);
+    public ShoppingCenter(String area, int floorsNumber, String floorsHeight,int shopsNumber) {
+        super(area, floorsNumber, floorsHeight);
         this.shopsNumber = shopsNumber;
     }
 
