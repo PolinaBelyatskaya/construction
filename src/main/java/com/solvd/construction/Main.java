@@ -43,6 +43,8 @@ public class Main {
 
         PrivateOrganisation privateOrganisation = new PrivateOrganisation("Avant-garde");
         privateOrganisation.setBudget(10000);
+        int result = privateOrganisation.getSum(2, 2);
+        //PrivateOrganisation.setAmount(1);
 
         StateOrganisation stateOrganisation = new StateOrganisation("Ministry of Architecture and Construction", 50000,"closed joint stock company", "full");
 

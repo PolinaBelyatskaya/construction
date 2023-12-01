@@ -2,17 +2,17 @@ package com.solvd.construction.models.people;
 
 public enum Sex {
 
-    MALE ("male"),
-    FEMALE ("female");
+    MALE("male"),
+    FEMALE("female");
 
-    private String sex;
+    private String name;
 
-    Sex (String sex){
-        this.sex=sex;
+    Sex(String name) {
+        this.name = name;
     }
 
-    public String getSex(){
-        return sex;
+    public String getName() {
+        return name;
     }
 }
 

@@ -2,20 +2,20 @@ package com.solvd.construction.models.constructionengineering;
 
 public enum Color {
 
-    WHITE ("white"),
-    BLACK ("black"),
-    RAD ("rad"),
-    GREEN ("green"),
-    YELLOW ("yellow"),
-    BLUE ("blue");
+    WHITE("white"),
+    BLACK("black"),
+    RAD("rad"),
+    GREEN("green"),
+    YELLOW("yellow"),
+    BLUE("blue");
 
-    private String color;
+    private String name;
 
-    Color (String color){
-        this.color=color;
+    Color(String name) {
+        this.name = name;
     }
 
-    public String getColor() {
-        return color;
+    public String getName() {
+        return name;
     }
 }
