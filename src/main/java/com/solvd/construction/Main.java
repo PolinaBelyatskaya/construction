@@ -1,56 +1,62 @@
 package com.solvd.construction;
 
-import com.solvd.construction.models.building.ApartmentHouse;
-import com.solvd.construction.models.building.ShoppingCenter;
-import com.solvd.construction.models.constructionengineering.Color;
-import com.solvd.construction.models.constructionengineering.Crane;
-import com.solvd.construction.models.constructionengineering.Excavator;
-import com.solvd.construction.models.constructionengineering.Lorry;
-import com.solvd.construction.models.organisation.PrivateOrganisation;
-import com.solvd.construction.models.organisation.StateOrganisation;
+import com.solvd.construction.models.buildings.ApartmentHouse;
+import com.solvd.construction.models.buildings.PrivateHouse;
+import com.solvd.construction.models.buildings.ShoppingCenter;
+import com.solvd.construction.models.machines.Crane;
+import com.solvd.construction.models.machines.Excavator;
+import com.solvd.construction.models.machines.Lorry;
+import com.solvd.construction.models.organisations.BuildingCompany;
 import com.solvd.construction.models.people.Architect;
 import com.solvd.construction.models.people.Constructor;
-import com.solvd.construction.models.people.Sex;
+import com.solvd.construction.models.people.Director;
+import com.solvd.construction.models.projects.Project;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
 
-        ApartmentHouse apartmentHouse = new ApartmentHouse("700m2", 2020, 20, "3m", "civilianConstruction", 100, 20);
+        ApartmentHouse apartmentHouse = new ApartmentHouse(100, 10, 20, 3, 1000, LocalDate.of(2020, 01, 01));
+        System.out.println (apartmentHouse.toString());
+        //how to set address?
 
-        ApartmentHouse apartmentHouse1 = new ApartmentHouse("500m2", 5, "3m");
-        apartmentHouse1.setConstructionYear(2014);
-        apartmentHouse1.setApartmentsNumber(15);
-        apartmentHouse1.setType("residentialConstruction");
+        ShoppingCenter shoppingCenter = new ShoppingCenter(200, 20, 3, 5,2000, LocalDate.of(2014, 9, 13),"Main street, 45");
 
-        ShoppingCenter shoppingCenter = new ShoppingCenter("1000m2", 3, "5m", 200);
-        shoppingCenter.setConstructionYear(202);
-        shoppingCenter.setType("publicConstruction");
+        PrivateHouse privateHouse = new PrivateHouse(5,2,2,3,150, LocalDate.of(2001, 07,21), "5th Ave, 12");
 
-        Crane crane = new Crane("Volvo", 10 / 5, 200);
-        crane.setMaximumHeight(10 / 5);
+        Crane crane = new Crane("Volvo");
+        crane.setPricePerHour(200);
+        crane.setMaximumHeight(20);
 
-        Excavator excavator = new Excavator();
-        excavator.setBrand("Hyundai");
-        excavator.setColor(Color.YELLOW);
-        excavator.setCargoCapacity(100);
-        excavator.setPricePerHour(500);
-        excavator.setWeight(500);
-        excavator.setMaximumHeight(10);
-        excavator.setMaximumDepth(5);
+        Excavator excavator = new Excavator("Hyundai",100,3/5, 2);
 
-        Lorry lorry = new Lorry("Man", 500, 100);
-        lorry.setColor(Color.BLACK);
 
-        PrivateOrganisation privateOrganisation = new PrivateOrganisation("Avant-garde");
-        privateOrganisation.setBudget(10000);
-        int result = privateOrganisation.getSum(2, 2);
-        //PrivateOrganisation.setAmount(1);
+        Lorry lorry = new Lorry("Man");
+        lorry.setPricePerHour(50);
+        lorry.setCargoCapacity(500);
 
-        StateOrganisation stateOrganisation = new StateOrganisation("Ministry of Architecture and Construction", 50000,"closed joint stock company", "full");
+        BuildingCompany buildingCompany = new BuildingCompany("Avant-garde");
+        String [] listOfArchitects = new String[]{"Architect 1", "Architect 2", "Architect 3"};
+        //listOfConstructors[0] = "Constructor 1"; //???
 
-        Architect architect = new Architect("Ilya", "Fedorov", Sex.MALE, 32, 1, 10/5, "bachelor");
+        //?how to set all arrays?
 
-        Constructor constructor = new Constructor("Dmitry", "Soloviev", Sex.MALE, 40);
-        constructor.setUserId(2);
+        Architect architect = new Architect("John", "Smith");
+        architect.setSex("Male");
+        architect.setDegree("Bachelor");
+        architect.setSalaryPerHour(10);
+        architect.setHoursOfWork(40);
+
+        Director director = new Director("Tom", "Jackson", "Male", 30, "Master");
+        System.out.println(director);
+
+        Constructor constructor = new Constructor("Jack", "Johns", "Male", 9);
+        Constructor.build(crane);
+
+        Project project = new Project(20000, LocalDate.of(2025, 01, 01));
+
+        project.calculateExpence(architect, 10,40);
+
     }
 }
