@@ -12,13 +12,9 @@ public class ApartmentHouse {
     private LocalDate constructionYear;
     private static String address = new String(); //?? can we create it like this? Address can not be static?
 
-    public ApartmentHouse(int apartmentsNumber, int utilityRoomsNumber, int floorsNumber, int floorsHeight, int area, LocalDate constructionYear) {
+    public ApartmentHouse(int apartmentsNumber, int floorsNumber) {
         this.apartmentsNumber = apartmentsNumber;
-        this.utilityRoomsNumber = utilityRoomsNumber;
         this.floorsNumber = floorsNumber;
-        this.floorsHeight = floorsHeight;
-        this.area = area;
-        this.constructionYear = constructionYear;
 
     }
 
@@ -76,6 +72,21 @@ public class ApartmentHouse {
 
     public static void setAddress(String address) {
         ApartmentHouse.address = address;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
 

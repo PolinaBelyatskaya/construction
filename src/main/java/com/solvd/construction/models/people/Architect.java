@@ -1,6 +1,6 @@
 package com.solvd.construction.models.people;
 
-public class Architect{
+public class Architect {
 
     private String firstName;
     private String lastName;
@@ -11,17 +11,17 @@ public class Architect{
     private int hoursOfWork;
 
 
-    public Architect(String firstName, String lastName, String sex, float salaryPerHour, String degree) {
+   public Architect(String firstName, String lastName, String sex, float salaryPerHour, String degree) {
 
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.sex = sex;
-        this.salaryPerHour = salaryPerHour;
-        this.degree = degree;
-        userId++;
+       this.firstName = firstName;
+      this.lastName = lastName;
+       this.sex = sex;
+       this.salaryPerHour = salaryPerHour;
+       this.degree = degree;
+       userId++;
     }
 
-    public Architect(String firstName, String lastName) { //?? can we not duplicate this. statement?
+  public Architect(String firstName, String lastName) { //?? can we not duplicate this. statement?
 
     }
 
@@ -72,4 +72,6 @@ public class Architect{
     public void setHoursOfWork(int hoursOfWork) {
         this.hoursOfWork = hoursOfWork;
     }
+
+
 }

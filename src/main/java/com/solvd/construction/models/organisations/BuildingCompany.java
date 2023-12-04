@@ -1,16 +1,24 @@
 package com.solvd.construction.models.organisations;
 
+import com.solvd.construction.models.machines.Crane;
+import com.solvd.construction.models.machines.Excavator;
+import com.solvd.construction.models.machines.Lorry;
+import com.solvd.construction.models.people.Architect;
+import com.solvd.construction.models.people.Constructor;
+import com.solvd.construction.models.people.Director;
+import com.solvd.construction.models.projects.Project;
+
 public class BuildingCompany {
 
     private String name;
-    private String [] listOfArchitects; // = new String[3]{"Architect 1", "Architect 2", "Architect 3"}; //?should we set it in constructor?
-    private String [] listOfConstructors = new String[]{"Constructor 1", "Constructor 2"};
-    private String [] listOfDirectors = new String[3];
-    private String [] listOfMachines = new String[50];
-    private String [] listOfProjects = new String [5];
+    private Architect [] architects;
+    private Constructor [] constructors;
+    private Director director;
+    private Crane [] cranes;
+    private Excavator [] excavators;
+    private Lorry [] lorries;
+    private Project [] projects;
 
-    //listOfArchitects = new String [10]; - can we do it like this, on the separate line and live in the field
-    //only private String [] ListOfEmployees; ??
 
     public BuildingCompany(String name){
         this.name = name;
@@ -24,43 +32,59 @@ public class BuildingCompany {
         this.name = name;
     }
 
-    public String[] getListOfArchitects() {
-        return listOfArchitects;
+    public Architect[] getArchitects() {
+        return architects;
     }
 
-    public void setListOfArchitects(String[] listOfArchitects) {
-        this.listOfArchitects = listOfArchitects;
+    public void setArchitects(Architect[] architects) {
+        this.architects = architects;
     }
 
-    public String[] getListOfConstructors() {
-        return listOfConstructors;
+    public Constructor[] getConstructors() {
+        return constructors;
     }
 
-    public void setListOfConstructors(String[] listOfConstructors) {
-        this.listOfConstructors = listOfConstructors;
+    public void setConstructors(Constructor[] constructors) {
+        this.constructors = constructors;
     }
 
-    public String[] getListOfDirectors() {
-        return listOfDirectors;
+    public Director getDirector() {
+        return director;
     }
 
-    public void setListOfDirectors(String[] listOfDirectors) {
-        this.listOfDirectors = listOfDirectors;
+    public void setDirector(Director director) {
+        this.director = director;
     }
 
-    public String[] getListOfMachines() {
-        return listOfMachines;
+    public Crane[] getCranes() {
+        return cranes;
     }
 
-    public void setListOfMachines(String[] listOfMachines) {
-        this.listOfMachines = listOfMachines;
+    public void setCranes(Crane[] cranes) {
+        this.cranes = cranes;
     }
 
-    public String[] getListOfProjects() {
-        return listOfProjects;
+    public Excavator[] getExcavators() {
+        return excavators;
     }
 
-    public void setListOfProjects(String[] listOfProjects) {
-        this.listOfProjects = listOfProjects;
+    public void setExcavators(Excavator[] excavators) {
+        this.excavators = excavators;
+    }
+
+    public Lorry[] getLorries() {
+        return lorries;
+    }
+
+    public void setLorries(Lorry[] lorries) {
+        this.lorries = lorries;
+    }
+
+    public Project[] getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Project[] projects) {
+        this.projects = projects;
     }
 }

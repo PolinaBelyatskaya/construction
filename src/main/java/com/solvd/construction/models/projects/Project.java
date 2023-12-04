@@ -1,18 +1,29 @@
 package com.solvd.construction.models.projects;
 
 import com.solvd.construction.models.people.Architect;
+import com.solvd.construction.models.people.Customer;
 
 import java.time.LocalDate;
 
 public class Project {
 
+    private String name;
     private int budget;
-    private String [] listOfCustomers = new String [30]; //?should we set it in constructor?
+    private Customer customer;
+    private LocalDate startDate;
     private LocalDate deadline;
 
-    public Project(int budget, LocalDate deadline){
-        this.budget = budget;
-        this.deadline = deadline;
+    public Project(String name, Customer customer){
+        this.name = name;
+        this.customer = customer;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getBudget() {
@@ -23,12 +34,20 @@ public class Project {
         this.budget = budget;
     }
 
-    public String[] getListOfCustomers() {
-        return listOfCustomers;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setListOfCustomers(String[] listOfCustomers) {
-        this.listOfCustomers = listOfCustomers;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
     public LocalDate getDeadline() {
