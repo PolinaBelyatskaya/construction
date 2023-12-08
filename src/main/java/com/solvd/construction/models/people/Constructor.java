@@ -1,62 +1,39 @@
 package com.solvd.construction.models.people;
 
 import com.solvd.construction.models.machines.Crane;
+import com.solvd.construction.models.machines.Machine;
 
-public class Constructor {
-    private String firstName;
-    private String lastName;
-    private String sex;
-    private float salaryPerHour;
+import java.math.BigDecimal;
 
+public class Constructor extends Employee {
 
+    private Machine[] machines;
 
-    public Constructor(String firstName, String lastName, String sex, float salaryPerHour) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.sex = sex;
-        this.salaryPerHour = salaryPerHour;
+    public Constructor(String firstName, String lastName, String sex, BigDecimal salaryPerHour,int hoursOfWork) {
+        super (firstName, lastName, sex, salaryPerHour, hoursOfWork);
 
     }
 
-    public Constructor(String firstName, String lastName) { //?? can we not duplicate this. statement?
+    public Constructor(String firstName, String lastName, BigDecimal salaryPerHour, int hoursOfWork) {
+        super (firstName, lastName, salaryPerHour, hoursOfWork);
 
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Machine[] getMachines() {
+        return machines;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public float getSalaryPerHour() {
-        return salaryPerHour;
-    }
-
-    public void setSalaryPerHour(float salaryPerHour) {
-        this.salaryPerHour = salaryPerHour;
+    public void setMachines(Machine[] machines) {
+        this.machines = machines;
     }
 
     public static void build(Crane crane){
         //is it the right way to link exact machine here?
         //can I not have logic inside the method?
+    }
+
+    @Override
+    public void work(){
+        System.out.println( toString() + "I work with help of machines");
     }
 }

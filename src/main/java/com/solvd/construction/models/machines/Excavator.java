@@ -1,38 +1,19 @@
 package com.solvd.construction.models.machines;
 
-public class Excavator {
+public class Excavator extends Machine{
 
-    private String brand;
-    private int pricePerHour;
     private float maximumHeight;
     private float maximumDepth;
 
 
     public Excavator(String brand, int pricePerHour, float maximumHeight, float maximumDepth) {
-        this.brand = brand;
-        this.pricePerHour = pricePerHour;
+        super (brand, pricePerHour);
         this.maximumHeight = maximumHeight;
         this.maximumDepth = maximumDepth;
     }
 
     public Excavator(String brand){
-
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public int getPricePerHour() {
-        return pricePerHour;
-    }
-
-    public void setPricePerHour(int pricePerHour) {
-        this.pricePerHour = pricePerHour;
+        super (brand);
     }
 
     public float getMaximumHeight() {

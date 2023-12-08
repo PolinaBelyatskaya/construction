@@ -3,6 +3,7 @@ package com.solvd.construction.models.projects;
 import com.solvd.construction.models.people.Architect;
 import com.solvd.construction.models.people.Customer;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Project {
@@ -58,14 +59,14 @@ public class Project {
         this.deadline = deadline;
     }
 
-    public float calculateExpencese (Architect architect){
-        return architect.getSalaryPerHour()*architect.getHoursOfWork();
-    }
+    //public float calculateExpencese (Architect architect){
+      //  return architect.getSalaryPerHour()*architect.getHoursOfWork();
+    //}
 
-    public float calculateExpence (Architect architect, float salary, int hour){
+    public BigDecimal calculateExpence (Architect architect, BigDecimal salary, int hour){
         salary = architect.getSalaryPerHour();
         hour = architect.getHoursOfWork();
-        float expense = salary*hour;
+        BigDecimal expense = salary.multiply(BigDecimal.valueOf(hour));
         return expense;
     }
 

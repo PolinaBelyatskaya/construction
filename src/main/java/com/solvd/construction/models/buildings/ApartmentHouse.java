@@ -2,20 +2,21 @@ package com.solvd.construction.models.buildings;
 
 import java.time.LocalDate;
 
-public class ApartmentHouse {
+public class ApartmentHouse extends Building{
 
     private int apartmentsNumber;
     private int utilityRoomsNumber;
-    private int floorsNumber;
-    private int floorsHeight;
-    private int area;
-    private LocalDate constructionYear;
-    private static String address = new String(); //?? can we create it like this? Address can not be static?
 
-    public ApartmentHouse(int apartmentsNumber, int floorsNumber) {
+
+
+    public ApartmentHouse(int floorsNumber, int floorsHeight, int area, LocalDate constructionYear, String address, int apartmentsNumber, int utilityRoomsNumber) {
+        super (floorsNumber, floorsHeight, area, constructionYear, address);
         this.apartmentsNumber = apartmentsNumber;
-        this.floorsNumber = floorsNumber;
+        this.utilityRoomsNumber = utilityRoomsNumber;
+    }
 
+    public ApartmentHouse(String address, int floorsNumber){
+        super (address, floorsNumber);
     }
 
     public int getApartmentsNumber() {
@@ -34,45 +35,6 @@ public class ApartmentHouse {
         this.utilityRoomsNumber = utilityRoomsNumber;
     }
 
-    public int getFloorsNumber() {
-        return floorsNumber;
-    }
-
-    public void setFloorsNumber(int floorsNumber) {
-        this.floorsNumber = floorsNumber;
-    }
-
-    public int getFloorsHeight() {
-        return floorsHeight;
-    }
-
-    public void setFloorsHeight(int floorsHeight) {
-        this.floorsHeight = floorsHeight;
-    }
-
-    public int getArea() {
-        return area;
-    }
-
-    public void setArea(int area) {
-        this.area = area;
-    }
-
-    public LocalDate getConstructionYear() {
-        return constructionYear;
-    }
-
-    public void setConstructionYear(LocalDate constructionYear) {
-        this.constructionYear = constructionYear;
-    }
-
-    public static String getAddress() {
-        return address;
-    }
-
-    public static void setAddress(String address) {
-        ApartmentHouse.address = address;
-    }
 
     @Override
     public int hashCode() {
@@ -84,9 +46,18 @@ public class ApartmentHouse {
         return super.equals(obj);
     }
 
+   // @Override
+    //public String toString() {
+     //   return super.toString();
+    //}
+
+
     @Override
     public String toString() {
-        return super.toString();
+        return "ApartmentHouse{" +
+                "apartmentsNumber=" + apartmentsNumber +
+                ", utilityRoomsNumber=" + utilityRoomsNumber +
+                '}';
     }
 }
 
